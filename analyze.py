@@ -27,13 +27,13 @@ def main():
 	for entity in response.entities:
 	     print('=' * 20)
 	     print entity.name
-	     db.Keywords.insert_one({entity.name:"1"})
+	     db.Keywords.update({"word":entity.name},{ "$set" : {"word":entity.name}}, upsert=True)
+	     db.Keywords.update({"word":entity.metadata},{ "$set" : {"word":entity.metadata}}, upsert=True)
 	     print('         name: {0}'.format(entity.name))
 	     #print('         type: {0}'.format(entity.entity_type))
 	     print('     metadata: {0}'.format(entity.metadata))
 	     print('     salience: {0}'.format(entity.salience))
 	resp = db.Keywords.find()
-	deleted = db.Keywords.delete_many({})
 	for item in resp:
 		print item
 	

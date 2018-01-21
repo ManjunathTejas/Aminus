@@ -1,0 +1,28 @@
+{
+  "name": "aminus",
+  "version": "1.0.0",
+  "description": "cool project",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "nodemon": "^1.14.11",
+    "socket.io": "^2.0.4",
+    "sockets": "^0.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IlanchezhianR/Aminus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IlanchezhianR/Aminus/issues"
+  },
+  "homepage": "https://github.com/IlanchezhianR/Aminus#readme"
+}
