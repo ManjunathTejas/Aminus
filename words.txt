@@ -9,3 +9,27 @@ sentence
 tiger
 cheetah
 moose
+stop
+slang words
+way
+computer
+rates
+factors
+vectors
+finals
+Abraham Lincoln
+George Washington
+thing
+United States
+link
+Wikipedia
+product
+Tigers
+attributes
+God
+president
+text
+Professor
+professor
+name
+numbers
