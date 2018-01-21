@@ -6,7 +6,7 @@
   "dependencies": {
     "express": "^4.16.2",
     "mongodb": "^2.2.33",
-    "nodemon": "^1.14.11",
+    "requirejs": "^2.3.5",
     "socket.io": "^2.0.4",
     "sockets": "^0.4.2"
   },
