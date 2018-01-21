@@ -1,4 +1,5 @@
-
+from pymongo import MongoClient
+from pprint import pprint
 from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
@@ -21,11 +22,20 @@ def main():
 	     document=document,
 	     encoding_type='UTF32',
 	 )
+	client = MongoClient("localhost",27017)
+	db = client.admin
 	for entity in response.entities:
 	     print('=' * 20)
+	     print entity.name
+	     db.Keywords.insert_one({entity.name:"1"})
 	     print('         name: {0}'.format(entity.name))
 	     #print('         type: {0}'.format(entity.entity_type))
 	     print('     metadata: {0}'.format(entity.metadata))
 	     print('     salience: {0}'.format(entity.salience))
+	resp = db.Keywords.find()
+	deleted = db.Keywords.delete_many({})
+	for item in resp:
+		print item
+	
 if __name__ == "__main__":
 	main()
