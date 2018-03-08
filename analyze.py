@@ -1,3 +1,4 @@
+import pymongo
 from pymongo import MongoClient
 from pprint import pprint
 from google.cloud import language
@@ -27,19 +28,33 @@ def main():
 	for entity in response.entities:
 	     print('=' * 20)
 	     print entity.name
-	     db.Keywords.update({"word":entity.name},{ "$set" : {"word":entity.name}}, upsert=True)
+	     if db.Keywords.find_one({"word":entity.name}) is None:
+		db.Keywords.insert({"word":entity.name}, {"count":5})
+	     else:
+	        db.Keywords.update({"word":entity.name}, { "$inc": {"count": 1}})
+             print db.Keywords.find_one({"word":entity.name})
 	     print('         name: {0}'.format(entity.name))
 	     #print('         type: {0}'.format(entity.entity_type))
 	     print('     metadata: {0}'.format(entity.metadata))
 	     print('     salience: {0}'.format(entity.salience))
-	resp = db.Keywords.find()
+        resp = db.Keywords.find().sort("count",pymongo.DESCENDING)
 	arr = []
+	i = 0
 	for item in resp:
+		if i == 5:
+			break
 		arr.append(item['word'])
-	file = open("words.txt","w")
+		i += 1
+	file = open("data.txt","w")
+	i = 1
 	for item in arr:
+		file.write('<p id="p')
+		file.write(str(i))
+		file.write('">')
 		file.write(item)
+		file.write('</p>')
 		file.write("\n")
+		i += 1
 	file.close()
 if __name__ == "__main__":
 	main()

@@ -1,4 +1,4 @@
-
+<html>
 <head>
     <link rel="stylesheet" href="css/mainpagebackground.css">
     <meta charset="UTF-8">
@@ -39,19 +39,142 @@
 
 
     div.container {
-    position: absolute;
-    top: 80px;
-    right: -180px;
-    width: 700px;
-    
+        position: absolute;
+        top: 80px;
+        right: -180px;
+        width: 700px;
     }
+
+    div.buttonLoc1 {
+        position: absolute;
+        bottom: 12px;
+        left: 50px;
+        width: 300px;
+    }
+
+       div.buttonLoc2 {
+        position: absolute;
+        bottom: 12px;
+        left: 240px;
+        width: 300px;
+    }
+
+       div.buttonLoc3 {
+        position: absolute;
+        bottom: 12px;
+        left: 430px;
+        width: 300px;
+    }
+
+       div.buttonLoc4 {
+        position: absolute;
+        bottom: 12px;
+        left: 620px;
+        width: 300px;
+    }
+
+     div.buttonLoc5 {
+        position: absolute;
+        bottom: 12px;
+        left: 810px;
+        width: 300px;
+    }
+
     
     .active {
         background-color: #eb5449;
     }
 
+
+
     </style>
-    </head>
+    <script 
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        var count1 = 1; // end 9
+        var count2 = 2; // end 10
+        var count3 = 3; // end 11
+        var count4 = 4; // end 12
+        var count5 = 5;
+        var website = "https:en.wikipedia.org/wiki/";
+
+        setInterval(function(){
+            var str1 = "data.txt #p";
+            var doc1 = str1 + count1;
+            var doc2 = str1 + count2;
+            var doc3 = str1 + count3;
+            var doc4 = str1 + count4;
+            var doc5 = str1 + count5;
+            var clickValue = "#btn1 #p" + count1;
+            var clickValue2 = "#btn2 #p" + count2;
+            var clickValue3 = "#btn3 #p" + count3;
+            var clickValue4 = "#btn4 #p" + count4;
+            var clickValue5 = "#btn5 #p" + count5;
+
+            $("#btn1").load(doc1);
+            $("#btn1").off().click(function () {
+                //var clickValue = "#btn #p" + count1;
+                var buttonLabel = $(clickValue).html();
+                var finalWebsite = website+buttonLabel;
+                window.open(finalWebsite);
+            });
+            $("#btn2").load(doc2);
+            $("#btn2").off().click(function () {
+                //var clickValue = "#btn #p" + count1;
+                var buttonLabel = $(clickValue2).html();
+                var finalWebsite = website+buttonLabel;
+                window.open(finalWebsite);
+            });
+            $("#btn3").load(doc3);
+            $("#btn3").off().click(function () {
+                //var clickValue = "#btn #p" + count1;
+                var buttonLabel = $(clickValue3).html();
+                var finalWebsite = website+buttonLabel;
+                window.open(finalWebsite);
+            });
+            $("#btn4").load(doc4);
+            $("#btn4").off().click(function () {
+                //var clickValue = "#btn #p" + count1;
+                var buttonLabel = $(clickValue4).html();
+                var finalWebsite = website+buttonLabel;
+                window.open(finalWebsite);
+            });
+            $("#btn5").load(doc5);
+            $("#btn5").off().click(function () {
+                //var clickValue = "#btn #p" + count1;
+                var buttonLabel = $(clickValue5).html();
+                var finalWebsite = website+buttonLabel;
+                window.open(finalWebsite);
+            });
+            if(count1 == 13){
+
+            }
+            /*
+            count1 += 4;
+            count2 += 4;
+            count3 += 4;
+            count4 += 4;
+            count5 += 4;
+            */
+        }, 3000);
+    });
+    </script>
+    
+    <style>
+        button {
+            background-color: #eb5449;
+            border: none;
+            color: white;
+            width: 150px;
+            height: 55px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+    </style>
+
+</head>
 
 
     <ul>
@@ -60,10 +183,9 @@
     </ul>
  
     <body>  
-    <object width="945" height="550"
+    <object width="945" height="600"
     data="https://www.youtube.com/embed/54_XRjHhZzI">
     </object>
-
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3 col-sm-12">
@@ -163,57 +285,22 @@
             }
         })();
     </script>
-        
+
+<div class = "buttonLoc1">
+    <button id="btn1">Tags</button>
+</div>
+<div class = "buttonLoc2">
+    <button id="btn2">Tags</button>
+</div>
+<div class = "buttonLoc3">
+    <button id="btn3">Tags</button>
+</div>
+<div class = "buttonLoc4">
+    <button id="btn4">Tags</button>
+</div>
+<div class = "buttonLoc5">
+    <button id="btn5">Tags</button>
+</div>
+
 </body>
-
-    
-
-<style>
-button {
-    background-color: #eb5449;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-</style>
-
-
-<body>
-
-<h6>TAGS</h6>
-
-<script>
-    function visitPage(){
-        window.location='http://www.google.com';
-    }
-        function visitPage2(){
-        window.location='http://www.google.com';
-    }
-            function visitPage3(){
-        window.location='http://www.google.com';
-    }
-            function visitPage4(){
-        window.location='http://www.google.com';
-    }
-            function visitPage5(){
-        window.location='http://www.google.com';
-    }
-</script>
-  q
-
-<button onclick="visitPage();" >Key Word 1</button> 
-<button onclick="visitPage2();">Key Word 2</button>    
-<button onclick="visitPage3();">Key Word 3</button>       
-<button onclick="visitPage4();">Key Word 4</button>       
-<button onclick="visitPage5();">Key Word 5</button>       
-
-          
-        
-
 </html>
